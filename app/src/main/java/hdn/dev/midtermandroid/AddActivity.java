@@ -32,6 +32,31 @@ public class AddActivity extends AppCompatActivity {
 
 
         // controller
+        tfName.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence,
+                                          int i, int i1, int i2) {
+
+                //Gọi trước khi text thay đổi
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence,
+                                      int i, int i1, int i2) {
+                if (charSequence.length() == 0) {
+                    tfName.setError("Bạn bắt buộc phải nhập số điện thoại");
+                } else {
+                    tfName.setError(null);
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+
+
+        });
         tfPhone.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence,
